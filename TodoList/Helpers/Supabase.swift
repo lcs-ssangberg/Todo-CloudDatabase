@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 import Supabase
  
 let supabase = SupabaseClient(
