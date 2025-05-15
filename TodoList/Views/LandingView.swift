@@ -59,6 +59,7 @@ struct LandingView: View {
                         newItemDescription = ""
                     }
                     .font(.caption)
+                    .disabled(newItemDescription.trimmingCharacters(in: .whitespaces).isEmpty == true)
                 }
                 .padding(20)
                 
