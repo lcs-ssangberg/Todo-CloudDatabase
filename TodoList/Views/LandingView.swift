@@ -54,6 +54,9 @@ struct LandingView: View {
                     Button("ADD") {
                         // Add the new to-do item
                         viewModel.createToDo(withTitle: newItemDescription)
+                        
+                        //clear text field
+                        newItemDescription = ""
                     }
                     .font(.caption)
                 }
