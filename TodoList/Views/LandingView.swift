@@ -11,9 +11,6 @@ struct LandingView: View {
     
     // MARK: Stored properties
     
-    // The item currently being added
-    @State var newItemDescription = ""
-    
     // The search text
     @State var searchText = ""
     
@@ -51,25 +48,12 @@ struct LandingView: View {
                     }
                 }
                 
-                HStack {
-                    TextField("Enter a to-do item", text: $newItemDescription)
-                    
-                    Button("ADD") {
-                        // Add the new to-do item
-                        viewModel.createToDo(withTitle: newItemDescription)
-                        
-                        //clear text field
-                        newItemDescription = ""
-                    }
-                    .font(.caption)
-                    .disabled(newItemDescription.trimmingCharacters(in: .whitespaces).isEmpty == true)
-                }
-                .padding(20)
+                
                 
             }
             .navigationTitle("To do")
             .sheet(isPresented: $presentingNewItemSheet) {
-                Text("Hello, world!")
+                NewItemView(showSheet: $presentingNewItemSheet)
                     .presentationDetents([.medium, .fraction(0.15)])
             }
             // Add a tool bar to the top of the interface
