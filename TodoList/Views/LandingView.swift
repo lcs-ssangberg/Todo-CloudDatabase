@@ -28,19 +28,30 @@ struct LandingView: View {
                 
                 if viewModel.todos.isEmpty {
                     
-                    //show the prompt to add a new to-do item
-                    ContentUnavailableView(
-                        "No to-do items",
-                        systemImage: "pencil.tip.crop.circle.badge.plus",
-                        description: Text("Add a reminder to get started")
-                    )
+                    if viewModel.fetchingTodos {
+                        
+                        Spacer()
+                        
+                        ProgressView()
+                        
+                        Spacer()
+                        
+                    } else {
+                        
+                        ContentUnavailableView(
+                            "No to-do items",
+                            systemImage: "pencil.tip.crop.circle.badge.plus",
+                            description: Text("Add a reminder to get started")
+                        )
+                        
+                    }
                     
                 } else {
                     
                     //show list of items
                     List($viewModel.todos) { $todo in
                         
-                    
+                        
                         ItemView(currentItem: $todo)
                         // Delete item
                             .swipeActions {

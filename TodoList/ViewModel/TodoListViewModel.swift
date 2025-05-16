@@ -11,8 +11,12 @@ import Foundation
 class TodoListViewModel {
     
     // MARK: Stored properties
+    
     // The list of to-do items
     var todos: [TodoItem]
+    
+    // Track when to-do items are initially being fetched
+    var fetchingTodos: Bool = false
     
     // MARK: Initializer(s)
     init(todos: [TodoItem] = []) {
@@ -26,6 +30,9 @@ class TodoListViewModel {
     
     func getTodos() async throws {
         
+        //indicate that app is getting todo items from database
+        fetchingTodos = true
+        
         do {
             let results: [TodoItem] = try await supabase
                 .from("todos")
@@ -35,6 +42,9 @@ class TodoListViewModel {
                 .value
             
             self.todos = results
+            
+            //finished getting todo items
+            fetchingTodos = false
             
         } catch {
             debugPrint(error)
