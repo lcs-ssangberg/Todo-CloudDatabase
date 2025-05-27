@@ -12,7 +12,6 @@ struct TodoItem: Identifiable, Codable {
     var title: String
     var done:  Bool
 }
-
 let firstItem = TodoItem(title: "Study for Chemisty quiz", done: false)
 
 let secondItem = TodoItem(title: "Finish Computer Science assignment", done: true)

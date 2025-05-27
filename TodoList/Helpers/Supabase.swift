@@ -10,7 +10,7 @@ import Foundation
 import Supabase
  
 let supabase = SupabaseClient(
-  supabaseURL: URL(string: "https://cexqikhnzezjervaucuc.supabase.co")!,
-  supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNleHFpa2huemV6amVydmF1Y3VjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY3OTUxMzYsImV4cCI6MjA2MjM3MTEzNn0.sCkgUHs9js123peuRO9PYmoNlPcCCfObkuP-1rFVHL8"
+  supabaseURL: URL(string: "https://evvsuityhcofvmuyytpa.supabase.co")!,
+  supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2dnN1aXR5aGNvZnZtdXl5dHBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc1MjcyMzcsImV4cCI6MjA2MzEwMzIzN30.1ReGWH7OjNgtiSdVRL9KcV7IEEqsjZIek_fiUV3Il98"
 )
  
